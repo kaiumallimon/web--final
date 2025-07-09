@@ -1,0 +1,1 @@
+// JavaScript Session and Cookies: Managing sessionStorage, localStorage, and cookies. 

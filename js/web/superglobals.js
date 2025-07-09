@@ -1,0 +1,1 @@
+// JavaScript Global Objects: window, document, and other global variables. 

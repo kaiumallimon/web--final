@@ -1,0 +1,1 @@
+// JavaScript Functions: Declarations, expressions, arrow functions, and advanced usage. 

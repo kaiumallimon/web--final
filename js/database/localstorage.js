@@ -1,0 +1,1 @@
+// JavaScript Local Storage: Using localStorage and sessionStorage. 

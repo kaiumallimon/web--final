@@ -1,0 +1,1 @@
+// JavaScript CRUD: Create operation example (e.g., adding data to an array or storage). 

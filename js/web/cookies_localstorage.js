@@ -1,0 +1,1 @@
+// JavaScript Cookies and Local Storage: Managing browser storage. 

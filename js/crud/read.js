@@ -1,0 +1,1 @@
+// JavaScript CRUD: Read operation example (e.g., retrieving data from an array or storage). 

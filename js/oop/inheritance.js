@@ -1,0 +1,1 @@
+// JavaScript Inheritance: Prototypal and class-based inheritance. 

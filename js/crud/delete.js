@@ -1,0 +1,1 @@
+// JavaScript CRUD: Delete operation example (e.g., removing data from an array or storage). 

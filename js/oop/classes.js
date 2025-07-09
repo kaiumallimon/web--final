@@ -1,0 +1,1 @@
+// JavaScript Classes: ES6 class syntax, constructors, and methods. 

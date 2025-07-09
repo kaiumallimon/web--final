@@ -1,0 +1,1 @@
+// JavaScript Encapsulation: Private and public members, closures. 

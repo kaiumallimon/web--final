@@ -1,0 +1,1 @@
+// JavaScript File Handling: Reading and writing files in the browser (File API). 

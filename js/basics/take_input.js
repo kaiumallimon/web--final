@@ -1,0 +1,1 @@
+// JavaScript Input: Prompt, form input, and event handling basics. 

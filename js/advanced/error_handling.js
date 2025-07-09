@@ -1,0 +1,1 @@
+// JavaScript Error Handling: try, catch, finally, and custom errors. 

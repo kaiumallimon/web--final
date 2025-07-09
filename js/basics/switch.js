@@ -1,0 +1,1 @@
+// JavaScript Switch Statement: Syntax and usage examples. 
