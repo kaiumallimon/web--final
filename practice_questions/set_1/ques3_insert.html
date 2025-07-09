@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    font-family: 'Arial';
+  }
+
+  .main-content {
+    padding: 50px;
+    border-radius: 10px;
+    border: solid rgb(167, 167, 167) 1.5px;
+  }
+
+  h3,
+  p {
+    align-items: center;
+    text-align: center;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(49, 94, 255);
+    transition: ease 300ms;
+    cursor: pointer;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  #main-form {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  input[type="text"] {
+    padding: 10px 10px;
+    width: 200px;
+    border: solid 1.5px rgb(184, 184, 184);
+    border-radius: 5px;
+  }
+
+  #insert {
+    width: 100%;
+    padding: 10px 0px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(49, 94, 255);
+    color: white;
+    cursor: pointer;
+    transition: ease 500ms;
+  }
+
+  #calculate:hover {
+    opacity: .5;
+  }
+
+  #result {
+    align-items: center;
+    text-align: center;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+</style>
+
+<body>
+  <div class="main-content">
+    <form id="main-form" action="insert.php" method="POST" >
+      <h3>BookStore</h3>
+      <label>Title:
+        <input type="text" name="title" id="title" required>
+      </label>
+      <label>Author:
+        <input type="text" name="author" id="author" required>
+      </label>
+      <label>Genre:
+        <input type="text" name="genre" id="genre" required>
+      </label>
+      <label>Price:
+        <input type="text" name="price" id="price" required>
+      </label>
+
+      <button id="insert" type="submit">Insert</button>
+
+      <p>
+        <a href="./ques3_view.html"> View all books</a>
+      </p>
+    </form>
+  </div>
+</body>
+
+</html>

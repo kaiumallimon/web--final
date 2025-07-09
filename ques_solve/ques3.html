@@ -63,7 +63,7 @@
 
       <!--Location-->
       <label>Location:
-        <select name = location>
+        <select name="location">
           <option>Dhaka</option>
           <option>Chittagong</option>
         </select>
@@ -80,36 +80,48 @@
         <input type="text" name="units" id="unit-consumed">
       </label>
 
-      <button class="calculate-bill">Calculate Bill</button>
+      <button class="calculate-bill" type="submit">Calculate Bill</button>
     </form>
   </div>
 
 
   <script>
-    function calculateBill(event) {
+    // Alternative: Remove JavaScript and let form submit normally
+    // The form will work without JavaScript by just submitting to bill.php
+    // If you want to keep the JavaScript approach, uncomment the code below:
+    
+    /*
+    document.getElementById('bill-form').addEventListener('submit', function(event) {
       event.preventDefault();
 
-      const location = document.querySelector('select').value;
-      const area = document.querySelector('input[name="choice"]:checked')?.value;
+      const location = document.querySelector('select[name="location"]').value;
+      const area = document.querySelector('input[name="area"]:checked')?.value;
       const units = document.getElementById('unit-consumed').value;
 
       if (location && area && units !== "") {
+        // Create form data to match what bill.php expects
+        const formData = new FormData();
+        formData.append('location', location);
+        formData.append('area', area);
+        formData.append('units', units);
+
         fetch("bill.php", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ location, area, units })
+          body: formData
         })
-          .then(res => res.json())
+          .then(res => res.text())
           .then(data => {
-            alert("Your Bill: " + data.bill + " BDT");
+            // Since bill.php returns HTML, we'll redirect to it
+            document.open();
+            document.write(data);
+            document.close();
           })
           .catch(err => console.error(err));
       } else {
         alert('Fill all the fields');
       }
-    }
+    });
+    */
   </script>
 
 </body>

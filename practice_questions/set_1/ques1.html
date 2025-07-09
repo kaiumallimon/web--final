@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      align-content: center;
+      display: flex;
+      justify-content: center;
+      margin: 0px auto;
+    }
+
+    .main-content{
+      padding: 50px;
+      border-radius: 10px;
+      border: solid rgb(167, 167, 167) 1.5px;
+    }
+
+    h3, p{
+      align-items: center;
+      text-align: center;
+    }
+
+    #main-form{
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    input[type="text"]{
+      padding: 10px 10px;
+      width: auto;
+      border: solid 1.5px rgb(184, 184, 184);
+      border-radius: 5px;
+    }
+
+    #calculate{
+      width: 100%;
+      padding: 10px 0px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(49, 94, 255);
+      color: white;
+      cursor: pointer;
+      transition: ease 500ms;
+    }
+
+    #calculate:hover{
+      opacity: .5;
+    }
+
+    #result{
+      align-items: center;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-content">
+    <h3>Volume Calculator</h3>
+    <form id="main-form">
+      <label> Radius (cm): 
+        <input type="text" name="radius" id="radius">
+      </label>
+
+      <label> Height (cm): 
+        <input type="text" name="height" id="height">
+      </label>
+
+      <button id="calculate" onclick="calculateVolume()">Calculate</button>
+
+      <p id="result"></p>
+    </form>
+  </div>
+
+  <script>
+    function calculateVolume(){
+      event.preventDefault();
+
+      const radius_cm = parseFloat(document.getElementById("radius").value);
+      const height_cm = parseFloat(document.getElementById("height").value);
+
+      console.log(radius_cm);
+      console.log(height_cm);
+
+      if(!isNaN(radius_cm) && !isNaN(height_cm)){
+        const radius_meter = radius_cm/100;
+        const height_meter = height_cm/100;
+
+        const volume = Math.PI * (radius_meter*radius_meter)*(height_meter)*1000;
+        
+        let result = ""
+
+        if(volume<10){
+          result = "Status: <strong>small</strong>"
+        }else if(volume>=10 && volume<=50){
+          result = "Status: <strong>medium</strong>"
+        }else{
+          result = "Status: <strong>large</strong>"
+        }
+
+        document.getElementById("result").innerHTML = result;
+      }else{
+        alert("Enter all the data properly");
+      }
+
+    }
+  </script>
+</body>
+
+</html>
