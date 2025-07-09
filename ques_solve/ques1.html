@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+    .main-area {
+      width: 400px;
+      height: 300px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 0px auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      border: 2px solid #939393;
+      border-radius: 5px;
+    }
+
+    #calculate-btn {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid rgb(136, 136, 136);
+      cursor: pointer;
+      transition: ease 300ms;
+    }
+
+    #calculate-btn:hover {
+      opacity: .5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-area">
+    <form id="calculation_form">
+      <label> Height (cm):
+        <input type="text" id="height" name="height" required>
+      </label>
+      <br>
+      <label> Weight (lb):
+        <input type="text" id="weight" name="weight" required>
+      </label>
+      <br>
+      <button id="calculate-btn" onclick="calculate()">Calculate</button>
+    </form>
+
+    <p id="calculation-result"></p>
+    <p id="status">Stats: </p>
+
+  </div>
+
+  <script>
+    function calculate() {
+      // stop form from reloading the page 
+      event.preventDefault();
+
+      // get the height and weight from the form
+      const height = parseFloat(document.getElementById("height").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+
+      // main logic
+      if (!isNaN(height) && !isNaN(weight)) {
+        const height_metre = height / 100;
+        const weight_kg = weight / 2.2046;
+
+        const result_pre = weight_kg / (height_metre * height_metre);
+
+        const result = result_pre.toFixed(2)
+
+        let status = ""
+
+        if (result > 0 && result < 20) {
+          status = "bad";
+        } else if (result > 20 && result < 30) {
+          status = "not bad";
+        } else {
+          status = "good";
+        }
+
+        // show the result
+        document.getElementById("calculation-result").innerHTML = "Calculation Result: <strong>" + result + "</strong>";
+        document.getElementById("status").innerHTML = "Calculation Result: <strong>" + status + "</strong>";
+      }else{
+        alert("please enter valid height and weight!");
+      }
+    }
+  </script>
+</body>
+
+</html>

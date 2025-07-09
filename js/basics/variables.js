@@ -1,0 +1,1 @@
+// JavaScript Variables: Declaration, initialization, and scope examples. 

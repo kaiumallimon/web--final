@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 0px auto;
+      border: 2px solid rgb(195, 195, 195);
+      padding: 40px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
+    select,
+    input[type='text'] {
+      width: 80%;
+      padding: 10px 0px;
+      border: solid 2px rgb(192, 192, 192);
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .calculate-bill {
+      padding: 10px 0px;
+      border-radius: 5px;
+      background-color: rgb(4, 96, 255);
+      color: white;
+      cursor: pointer;
+      transition: ease 300ms;
+      border: none;
+    }
+
+    .calculate-bill:hover {
+      opacity: .5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-content">
+    <form action="bill.php" method="POST" id="bill-form">
+
+      <!--Location-->
+      <label>Location:
+        <select name = location>
+          <option>Dhaka</option>
+          <option>Chittagong</option>
+        </select>
+      </label>
+
+      <!--Area-->
+      <label>Area:
+        <label><input type="radio" name="area" value="urban"> Urban</label>
+        <label><input type="radio" name="area" value="rural"> Rural</label>
+      </label>
+
+      <!--Area-->
+      <label>Unit Consumed:
+        <input type="text" name="units" id="unit-consumed">
+      </label>
+
+      <button class="calculate-bill">Calculate Bill</button>
+    </form>
+  </div>
+
+
+  <script>
+    function calculateBill(event) {
+      event.preventDefault();
+
+      const location = document.querySelector('select').value;
+      const area = document.querySelector('input[name="choice"]:checked')?.value;
+      const units = document.getElementById('unit-consumed').value;
+
+      if (location && area && units !== "") {
+        fetch("bill.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ location, area, units })
+        })
+          .then(res => res.json())
+          .then(data => {
+            alert("Your Bill: " + data.bill + " BDT");
+          })
+          .catch(err => console.error(err));
+      } else {
+        alert('Fill all the fields');
+      }
+    }
+  </script>
+
+</body>
+
+</html>

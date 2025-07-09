@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All HTML Elements Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>body { font-family: Arial, sans-serif; }</style>
+</head>
+<body>
+    <!-- Sectioning elements -->
+    <header>
+        <h1>Header Section</h1>
+        <nav>
+            <ul>
+                <li><a href="#main">Main</a></li>
+                <li><a href="#footer">Footer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section>
+            <h2>Section Title</h2>
+            <article>
+                <h3>Article Title</h3>
+                <p>This is an article inside a section.</p>
+                <aside>Aside content</aside>
+                <address>Contact: <a href="mailto:someone@example.com">someone@example.com</a></address>
+            </article>
+        </section>
+    </main>
+    <footer id="footer">
+        <p>Footer content</p>
+    </footer>
+
+    <!-- Text content -->
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p>This is a paragraph.</p>
+    <hr>
+    <pre>Preformatted text</pre>
+    <blockquote>This is a blockquote.</blockquote>
+    <ol><li>Ordered list item</li></ol>
+    <ul><li>Unordered list item</li></ul>
+    <dl><dt>Term</dt><dd>Definition</dd></dl>
+    <figure>
+        <img src="https://via.placeholder.com/100" alt="Placeholder">
+        <figcaption>Figure caption</figcaption>
+    </figure>
+    <div>This is a div.</div>
+
+    <!-- Inline text semantics -->
+    <a href="#">Link</a>
+    <em>Emphasis</em>
+    <strong>Strong</strong>
+    <small>Small</small>
+    <s>Strikethrough</s>
+    <cite>Citation</cite>
+    <q>Quote</q>
+    <dfn>Definition</dfn>
+    <abbr title="HyperText Markup Language">HTML</abbr>
+    <ruby>漢 <rt>kan</rt></ruby>
+    <data value="42">Data</data>
+    <time datetime="2024-01-01">January 1, 2024</time>
+    <code>code()</code>
+    <var>x</var>
+    <samp>Sample output</samp>
+    <kbd>Ctrl+C</kbd>
+    <sub>sub</sub>
+    <sup>sup</sup>
+    <i>Italic</i>
+    <b>Bold</b>
+    <u>Underline</u>
+    <mark>Marked</mark>
+    <bdi>BDI</bdi>
+    <bdo dir="rtl">BDO</bdo>
+    <span>Span</span>
+    <br>
+    <wbr>
+
+    <!-- Image and multimedia -->
+    <img src="https://via.placeholder.com/50" alt="Image">
+    <iframe src="https://example.com" title="iframe example"></iframe>
+    <embed src="https://via.placeholder.com/50">
+    <object data="https://via.placeholder.com/50" type="image/png"></object>
+    <video controls width="100"><source src="movie.mp4" type="video/mp4">Video not supported.</video>
+    <audio controls><source src="audio.mp3" type="audio/mp3">Audio not supported.</audio>
+    <map name="map"><area shape="rect" coords="0,0,50,50" href="#"></map>
+    <canvas width="50" height="50"></canvas>
+    <svg width="50" height="50"><circle cx="25" cy="25" r="20" fill="blue" /></svg>
+
+    <!-- Scripting -->
+    <script>console.log('Script tag');</script>
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <template><p>Template content</p></template>
+
+    <!-- Table content -->
+    <table border="1">
+        <caption>Table Caption</caption>
+        <colgroup><col span="2"></colgroup>
+        <thead><tr><th>Header</th></tr></thead>
+        <tbody><tr><td>Cell</td></tr></tbody>
+        <tfoot><tr><td>Footer</td></tr></tfoot>
+    </table>
+
+    <!-- Forms -->
+    <form>
+        <fieldset>
+            <legend>Form Legend</legend>
+            <label for="input">Label</label>
+            <input id="input" type="text">
+            <!-- Radio buttons example -->
+            <div>
+                <label><input type="radio" name="choice" value="option1"> Option 1</label>
+                <label><input type="radio" name="choice" value="option2"> Option 2</label>
+            </div>
+            <!-- Checkbox example -->
+            <div>
+                <label><input type="checkbox" name="check1"> Check 1</label>
+                <label><input type="checkbox" name="check2"> Check 2</label>
+            </div>
+            <!-- Select dropdown example -->
+            <select><option>Option</option></select>
+            <!-- Multiple select example -->
+            <select multiple>
+                <option>Option A</option>
+                <option>Option B</option>
+            </select>
+            <!-- File input example -->
+            <input type="file" name="fileinput">
+            <!-- Range slider example -->
+            <input type="range" min="0" max="100" value="50">
+            <!-- Color picker example -->
+            <input type="color" value="#ff0000">
+            <!-- Date picker example -->
+            <input type="date">
+            <!-- Time picker example -->
+            <input type="time">
+            <!-- Month picker example -->
+            <input type="month">
+            <!-- Week picker example -->
+            <input type="week">
+            <!-- Datetime-local picker example -->
+            <input type="datetime-local">
+            <button type="submit">Button</button>
+            <datalist id="datalist"><option value="Value"></option></datalist>
+            <textarea>Textarea</textarea>
+            <output>Output</output>
+            <progress value="50" max="100"></progress>
+            <meter value="0.5">0.5</meter>
+        </fieldset>
+    </form>
+
+    <!-- Interactive elements -->
+    <details>
+        <summary>Details summary</summary>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ipsum pariatur quia, ab aspernatur consectetur distinctio ipsam dolor itaque soluta. Atque explicabo perferendis placeat quibusdam, nobis recusandae error omnis itaque.
+    </details>
+    <dialog open>Dialog content</dialog>
+    <menu><menuitem label="Menu Item"></menuitem></menu>
+
+    <!-- Web Components -->
+    <slot></slot>
+</body>
+</html> 

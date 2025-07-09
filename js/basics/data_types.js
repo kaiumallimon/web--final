@@ -1,0 +1,1 @@
+// JavaScript Data Types: String, Number, Boolean, Object, Array, Null, Undefined, Symbol. 
